@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+<head>
+
+	<title>::Result::</title>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="text-center p4">
+			<img src="/static/files/images/Banner.png">
+		</div>
+	<div class="container">
+
+		<marquee class="text-primary p5"> <h3>Designed & Developed by APSSDC Django Team</h3></marquee>
+		<div align="right" class="m-10">
+		<a class="mt-10 btn btn-primary " href="/static/files/myfile.csv" download>Download File</a>
+		</div>
+		<table border="2px" class="table table-hover">
+			<tr>
+			<thead>
+				<th>S.No</th>
+				<th>RollNo</th>
+				<th>FullName</th>
+				<th>Attendance</th>
+			</thead>
+			</tr>
+
+			<tbody>
+				{% for i in data %}
+					<tr>
+					<td>{{forloop.counter}}</td>
+					<td>{{i.sno}}</td>
+					<td>{{i.name}}</td>
+					<td>{{i.attendance}}</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+		<h3>Attendees:{{P}}</h3>
+		<h3>Absentee:{{A}}</h3>
+		<h3>Total:{{Total}}</h3>
+		<a class="ml-auto" href="/static/files/myfile.csv" download>Download File</a>
+</div>
+</body>
+</html>

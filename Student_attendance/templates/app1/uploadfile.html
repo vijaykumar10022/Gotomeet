@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>::upload::</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="text-center p4">
+			<img src="/static/files/images/Banner.png">
+		</div>
+	<div class="container p-5">
+		<marquee class="text-primary"> <h3>Designed & Developed by APSSDC Django Team</h3></marquee>
+		<div class="jumbotron text-center text-success shadow">
+			<h1>Gotomeeting Attendance Tracking</h1>
+		</div>
+		<form action="{% url 'uploadfile' %}" class="form-inline"  method="POST" enctype="multipart/form-data">
+			{% csrf_token %}
+		<div class="container-fluid my-2">
+		    <div class="row text-center py-3 d-flex flex-nowrap overflow-auto scrollbar">
+		      <div class="col-12 col-md-4">
+		        <div class="card shadow h-100">
+		          <div class="card-body">
+		            <h4 class="card-text"> Student File</h4>
+		            <div class="form-group">
+					    <input type="file" class="form-control-file" id="exampleFormControlFile1" name="file1">
+					    <label>Note:Upload Student file contain fields are rollno and Name fields and filename should be student.csv format </label>
+				    </div>
+		          </div>
+		        </div>
+		      </div>
+		      <div class="col-12 col-md-4">
+		      </div>
+		      <div class="col-12 col-md-4">
+		        <div class="card shadow h-100">
+		          <div class="card-body">
+		            <h4 class="card-text">Gotomeeting File</h4>
+		            <div class="form-group">
+					    <input type="file" class="form-control-file" id="exampleFormControlFile1" name="file2">
+					    <label>Note:Upload Gotomeeting xls file no need to change fields and filename should be gotomeeting.xls format </label>
+				    </div>
+		          </div>
+		        </div>
+		      </div>
+		    </div>
+  		</div>
+
+  		<div class="container-fluid my-5">
+		    <div class="row text-center py-5 d-flex flex-nowrap overflow-auto scrollbar">
+		      <div class="col-12 col-md-4">
+		      </div>
+		      <div class="col-12 col-md-4">
+
+		      	<button class="btn btn-info">Upload Files</button>
+		      </div>
+		      <div class="col-12 col-md-4">
+		        
+		      </div>
+		    </div>
+  		</div>
+  		</form>
+		
+	</div>
+</body>
+</html>
