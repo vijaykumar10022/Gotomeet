@@ -1,1 +1,1 @@
-web: gunicorn Gotomeeting_attendance.wsg
+web: gunicorn Gotomeeting_attendance.wsgi
