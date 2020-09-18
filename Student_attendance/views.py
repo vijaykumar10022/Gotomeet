@@ -11,10 +11,10 @@ def uploadfile(request):
 		file1=request.FILES['file1']
 		file2=request.FILES['file2']
 		Mymodel.objects.create(studnet_file=file1,gotomeeting_file=file2)
-		studentsData = "Student_attendance/static/files/StudentsData.csv"
+		studentsData = "Student_attendance/static/files/student.csv"
 		master = csv_data(studentsData)
 		master['Roll Number'] = rollNumber_upper(master['Roll Number'])
-		goToMeetingAttendanceFile = "Student_attendance/static/files/GotoMeetingData.xls"
+		goToMeetingAttendanceFile = "Student_attendance/static/files/gotomeeting.xls"
 		today = excel(goToMeetingAttendanceFile)
 		today['Name'] = rollNumber_upper(today['Name'])
 		today = today.groupby('Name').sum().reset_index()
