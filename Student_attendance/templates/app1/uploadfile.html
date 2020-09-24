@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html>
 <head>
   <title>::upload::</title>
@@ -28,7 +29,8 @@
 		            <h4 class="card-text"> Student File</h4>
 		            <div class="form-group">
 					    <input type="file" class="form-control-file" id="exampleFormControlFile1" name="file1">
-					    <label>Note:Upload Student file contain fields are rollno and Name fields and filename should be student.csv format </label>
+					    <label>Note:Upload Studenfile & this file contain  fields are Roll Number and Name fields and filename should be student.csv format
+					    <a href="/static/demofiles/StudentsData.csv" download>For Your Reference</a> </label>
 				    </div>
 		          </div>
 		        </div>
@@ -41,7 +43,9 @@
 		            <h4 class="card-text">Gotomeeting File</h4>
 		            <div class="form-group">
 					    <input type="file" class="form-control-file" id="exampleFormControlFile1" name="file2">
-					    <label>Note:Upload Gotomeeting xls file no need to change fields and filename should be gotomeeting.xls format </label>
+					    <label>Note:Upload Gotomeeting xls file no need to change fields and filename should be gotomeeting.xls format
+					    <a href="/static/demofiles/gotomeeting.xls" download>For Your Reference</a>
+					     </label>
 				    </div>
 		          </div>
 		        </div>
