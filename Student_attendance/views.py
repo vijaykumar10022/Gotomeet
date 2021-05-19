@@ -14,10 +14,10 @@ def uploadfile(request):
 		data=Mymodel.objects.last()
 		studentsData = "Student_attendance/static/files/{}".format(data.studnet_file)
 		master = csv_data(studentsData)
-		master['Roll Number'] = rollNumber_upper(master['Roll Number'])
+		master['Roll Number'] = master['Roll Number']
 		goToMeetingAttendanceFile = "Student_attendance/static/files/{}".format(data.gotomeeting_file)
 		today = excel(goToMeetingAttendanceFile)
-		today['Name'] = rollNumber_upper(today['Name'])
+		today['Name'] = today['Name']
 		today = today.groupby('Name').sum().reset_index()
 		req_time = filterdf(today,90)
 		result = split_name(req_time['Name'], '-')
